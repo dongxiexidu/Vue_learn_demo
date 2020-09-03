@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--遵循SoC关注度分离原则-->
+<!--    组件: 传递给组件中的值: props -->
+    <ldx v-for="item in items" v-bind:qin="item"></ldx>
+
+</div>
+
+<!--1.导入vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21"></script>
+
+<script>
+
+//   自定义:定义一个Vue组件component
+    Vue.component("ldx",{
+        props: ['qin'],
+        template: '<li>{{qin}}</li>'
+    });
+
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            items: ["java", "linux", "iOS"]
+        },
+
+    });
+</script>
+
+</body>
+</html>

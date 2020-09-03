@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+<div id="app">
+    {{message}}
+    <span v-bind:title="message">hello world</span>
+</div>
+
+<div id="app2">
+    {{message}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+<script>
+    var vm = new Vue({
+        //el 属性 用来指示vue编辑器从什么地方开始解析Vue语法,可以说是一个占位符
+        el: "#app",
+        //data 属性 从Vue中抽象出来的属性,视图中的数据存放在data中
+        data:{
+            message: "hello, vue!"
+        }
+
+    });
+
+    var vm2 = new Vue({
+        el: "#app2",
+        data:{
+            message: "hello, vue2!"
+        }
+
+    });
+</script>
+
+</body>
+</html>

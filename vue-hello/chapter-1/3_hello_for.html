@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <li v-for="(item,index) in items">
+        {{index}}-{{item.message}}
+    </li>
+</div>
+
+<!--1.导入vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data:{
+            items: [
+                {message: 'java'},
+                {message: 'html'},
+                {message: 'iOS'},
+                {message: 'css'}
+            ]
+        }
+    });
+</script>
+
+</body>
+</html>

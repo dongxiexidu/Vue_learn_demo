@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+
+<div id="app">
+
+<!--    v-model 会忽略所有表单元素的value,checked,selected特性的初始值 -->
+   输入的文本: <input type="text" v-model="message" > {{message}}
+
+    <br>
+    <textarea v-model="message"></textarea>
+    <br>
+
+    <!-- checked 默认选中-->
+    性别: <input type="radio" name="gender" value="男"  v-model="gender">男
+    <input type="radio" name="gender" value="女" v-model="gender">女
+
+    <p>
+        选中了: {{gender}}
+    </p>
+
+    <br>
+    下拉框:
+    <select name="" id="" v-model="selected">
+        <option disabled value="请选择">请选择</option>
+        <option>A</option>
+        <option>B</option>
+<!--  selected 默认选中      -->
+        <option selected>C</option>
+    </select>
+
+    <span>{{selected}}</span>
+
+
+</div>
+
+<!--1.导入vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "123",
+            gender: '男',
+            selected: '请选择'
+        }
+    });
+</script>
+
+</body>
+</html>
